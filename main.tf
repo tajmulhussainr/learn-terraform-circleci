@@ -6,6 +6,12 @@ terraform {
   }
 }
 
+backend "s3" {
+  bucket = "7ededdfa-167e-7fd9-0c42-c63f5ab686ae-backend"
+  key    = "terraform/webapp/terraform.tfstate"
+  region = "us-east-1"
+}
+
 provider "aws" {
   region = var.region
 }
